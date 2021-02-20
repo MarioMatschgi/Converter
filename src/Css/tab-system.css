@@ -1,0 +1,48 @@
+.container {
+  
+}
+.content {
+  background-color: var(--foreground_color);
+  border-radius: 0 var(--border_radius) var(--border_radius) var(--border_radius);
+}
+
+/* Style the tabs */
+.tabs {
+  display: flex;
+}
+
+.tabs a {
+	cursor: pointer;
+  padding: var(--small_padding);
+	transition: background-color 0.2s;
+  background-color: var(--highlight_color);
+  border-radius: var(--small_border_radius) var(--small_border_radius) 0 0;
+  
+  margin-right: var(--small_border_radius);
+  border-top: 0 solid var(--highlight_color);
+  
+  transition: all .4s;
+}
+.tabs a:last-child {
+  margin-right: 0;
+}
+
+/* Change background color of tabs on hover */
+.tabs a:not(.active):hover, .tabs a.active {
+	background-color: var(--foreground_color);
+
+  border-top: calc(var(--small_border_radius) / 2) solid var(--accent_color);
+	color: #fff;
+  font-weight: bold;
+}
+
+/* Styling for active tab */
+.tabs a.active {
+  /* background-color: var(--selection_color); */
+	cursor: default;
+}
+
+/* Style the tab content */
+.tabcontent {
+	padding: var(--padding);
+}
