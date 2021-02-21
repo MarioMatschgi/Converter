@@ -30,13 +30,16 @@
         </form>
 			</div>
 			<div v-if="activetab === '2'" class="tabcontent">
-				<p>BIT OPERATION</p>
+        <h2>Bit operations</h2>
+				<p>comming soon...</p>
 			</div>
 			<div v-if="activetab === '3'" class="tabcontent">
-				<p>CURRENCY</p>
+        <h2>Currency conversion</h2>
+				<p>comming soon...</p>
 			</div>
       <div v-if="activetab === '4'" class="tabcontent">
-				<p>METRIC-IMPERIAL</p>
+        <h2>Metric-imperial conversion</h2>
+				<p>comming soon...</p>
 			</div>
 		</div>
 	</div>
