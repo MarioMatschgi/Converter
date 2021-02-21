@@ -39,6 +39,7 @@ export default {
 
 :root {
 	--colors_red: #eb4d4b;
+	--colors_blue: #3498db;
 
 	--background_color: #202225;
 	--foreground_color: #2f3136;
@@ -65,7 +66,8 @@ export default {
 	-webkit-font-smoothing: antialiased;
 
 	color: var(--font_color);
-	flex-grow: 1;
+	min-height: 100vh;
+
 	display: flex;
 	flex-direction: column;
 }

@@ -1,12 +1,11 @@
 .container {
   
 }
-.content {
+.tabcontents {
   background-color: var(--foreground_color);
   border-radius: 0 var(--border_radius) var(--border_radius) var(--border_radius);
 }
 
-/* Style the tabs */
 .tabs {
   display: flex;
 }
@@ -38,7 +37,6 @@
 
 /* Styling for active tab */
 .tabs a.active {
-  /* background-color: var(--selection_color); */
 	cursor: default;
 }
 
