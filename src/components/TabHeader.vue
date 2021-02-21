@@ -10,26 +10,22 @@
 		<div class="box tabcontents">
 			<div v-if="activetab === '1'" class="tabcontent">
 				<h2>Base converter</h2>
-        <form @submit="onSubmit($event)">
+        <form>
           <div>
             <label for="binary"><span>Binary</span> <span>(base 2)</span></label>
-            <input type="text" id="binary"  name="binary"   @keydown="onInput('01', $event)">
+            <input type="text" data-base="2" id="binary"  name="binary"   @keydown="onInput('01', $event)">
           </div>
           <div>
             <label for="octal"><span>Octal</span> <span>(base 8)</span></label>
-            <input type="text" id="octal"   name="octal"    @keydown="onInput('01234567', $event)">
+            <input type="text" data-base="8" id="octal"   name="octal"    @keydown="onInput('01234567', $event)">
           </div>
           <div>
             <label for="decimal"><span>Decimal</span> <span>(base 10)</span></label>
-            <input type="text" id="decimal" name="decimal"  @keydown="onInput('0123456789', $event)">
+            <input type="text" data-base="10" id="decimal" name="decimal"  @keydown="onInput('0123456789', $event)">
           </div>
           <div>
             <label for="hex"><span>Hexadecimal</span> <span>(base 16)</span></label>
-            <input type="text" id="hex"  name="hex"         @keydown="onInput('0123456789ABCDEF', $event)">
-          </div>
-          <div class="break"></div>
-          <div id="submit-div">
-            <input type="submit">
+            <input type="text" data-base="16" id="hex"  name="hex"         @keydown="onInput('0123456789ABCDEF', $event)">
           </div>
         </form>
 			</div>
@@ -47,6 +43,19 @@
 </template>
 
 <script>
+// VARS FOR PREVIOUS VALUES AS STRINGS
+var values = {};
+
+function radix_converter(input, from_base, to_base) {
+	var output = "";
+	if (input !== undefined) {
+		if (to_base >= 2 && to_base <= 36) {
+			output = parseInt(input, from_base).toString(to_base);
+		}
+	}
+	return output;
+}
+
 export default {
 	name: "TabHeader",
 	methods: {
@@ -57,20 +66,81 @@ export default {
 			if (!isModifyKeyPressed(event, false, true, true, false)) {
 				if (k.length == 1 && legal.toLowerCase().includes(k)) {
 					// Key pressed is single character and legal
-					console.log("single character and legal");
-					event.target.value = (event.target.value + event.key).toUpperCase();
-					event.preventDefault();
+					// event.target.value = (event.target.value + event.key).toUpperCase();
+					// event.preventDefault();
 				} else if (k.length == 1) {
-					console.log("single character but illegal");
 					event.preventDefault();
-				} else {
-					console.log("multi  character and illegal");
 				}
 			}
+
+			// onSubmit(event);
+			setTimeout(function () {
+				console.log("Submit");
+
+				// CHECK WHICH TEXTFIELD CHANGED, THIS IS VALUE TO CONVERT
+				let form = document.getElementsByTagName("form")[0];
+				let inputs = form.getElementsByTagName("input");
+
+				let changedInput = event.target;
+				for (let i = 0; i < inputs.length; i++) {
+					let base = inputs[i].getAttribute("data-base");
+					// Check if key doesnt exist in values dict
+					if (!(base in values)) {
+						values[base] = "";
+					}
+				}
+
+				// UPDATE VARS
+				let base = parseInt(changedInput.getAttribute("data-base"));
+				let val = changedInput.value;
+				for (let key in values) {
+					if (val == "") {
+						values[key] = "";
+					} else {
+						if (key != base) {
+							values[key] = radix_converter(val, base, key);
+						} else {
+							values[key] = val;
+						}
+					}
+				}
+
+				// SET TEXFIELD CONTENTS TO VARS
+				for (let i = 0; i < inputs.length; i++) {
+					let input = inputs[i];
+					let base = input.getAttribute("data-base");
+
+					input.value = values[base];
+				}
+			}, 100);
 		},
+		/*
 		onSubmit(event) {
-			console.log("submit: " + event.key);
-		},
+			console.log("Submit");
+
+			// CHECK WHICH TEXTFIELD CHANGED, THIS IS VALUE TO CONVERT
+			let form = document.getElementsByTagName("form")[0];
+			let inputs = form.getElementsByTagName("input");
+
+			let changedInput;
+			for (let i = 0; i < inputs.length; i++) {
+				const input = inputs[i];
+				// Check if key doesnt exist in values dict
+				if (!(input.id in values)) {
+					values[input.id] = "";
+				}
+
+				// Check if there are changes
+				if (values[input.id] != input.value) {
+					changedInput = input;
+				}
+			}
+
+			// UPDATE VARS AND SET TEXFIELD CONTENTS TO VARS
+			console.log(changedInput.id);
+
+			event.preventDefault();
+		},*/
 	},
 	data: () => ({
 		activetab: "1",

@@ -29,6 +29,11 @@ form #submit-div {
   margin-left: auto;
   margin-right: auto;
 }
+form input[type="submit"] {
+}
+form input[type="submit"]:active {
+  transform: scale(0.95);
+}
 form label {
   margin-bottom: var(--small_border_radius);
   
