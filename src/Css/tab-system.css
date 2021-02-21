@@ -2,8 +2,11 @@
   
 }
 .tabcontents {
+  margin-top: 0 !important;
+  padding: 0 !important;
+  
   background-color: var(--foreground_color);
-  border-radius: 0 var(--border_radius) var(--border_radius) var(--border_radius);
+  border-radius: 0 var(--border_radius) var(--border_radius) var(--border_radius) !important;
 }
 
 .tabs {

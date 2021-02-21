@@ -20,6 +20,9 @@ body {
   border-radius: var(--border_radius);
   background: var(--foreground_color);
 }
+.box .box {
+  background: red;
+}
 .box :first-child {
   margin-top: 0;
 }

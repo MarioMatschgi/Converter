@@ -1,0 +1,38 @@
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+form input {
+  background-color: var(--highlight_color);
+  border: none;
+  color: var(--font_color);
+  font-size: 1em;
+  padding: var(--small_border_radius);
+  border-radius: var(--small_border_radius);
+  
+  transition: all .4s;
+}
+input:focus, input:hover {
+  box-shadow: 0 0 0 2px var(--colors_red);
+  outline: none;
+}
+form input, form label {
+  display: block;
+}
+form .break {
+  flex-basis: 100%;
+}
+form #submit-div {
+  margin-top: var(--padding);
+  margin-left: auto;
+  margin-right: auto;
+}
+form label {
+  margin-bottom: var(--small_border_radius);
+  
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}

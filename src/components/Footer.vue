@@ -3,7 +3,7 @@
     <p class="author">
       Made with <i class="fas heart" aria-hidden="true"></i> by me, Mario Elsnig <i class="far copyrightsign" aria-hidden="true"></i> 2021 
     </p>
-    <p class="contributors">Tested with skepticism <i class="fas fa-search"></i> by Björn Barow</p>
+    <p class="contributors">Tested with skepticism <i class="fas search">&#xf002;</i> by Björn Barow</p>
   </div>
 </template>
 

@@ -44,7 +44,7 @@ export default {
 	--background_color: #202225;
 	--foreground_color: #2f3136;
 	--accent_color: #7188da;
-	--highlight_color: #606368;
+	--highlight_color: #40444b;
 	/* --hover_color: #7188da; */
 	/*--selection_color: #ffffff17;*/ /* bright gray 37393e */
 	--font_color: #d7d8da;
@@ -75,4 +75,5 @@ export default {
 
 <style src="@/Css/general.css"></style>
 <style src="@/Css/font.css"></style>
+<style src="@/Css/form.css"></style>
 <style src="@/Css/animations.css"></style>
