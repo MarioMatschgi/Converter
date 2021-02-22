@@ -4,6 +4,14 @@ import { app, protocol, BrowserWindow } from 'electron'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
 const isDevelopment = process.env.NODE_ENV !== 'production'
+const { ipcMain } = require('electron')
+const path = require('path');
+
+// Open an URL with the default browser
+ipcMain.on('open_url', (event, arg) => {
+  require('electron').shell.openExternal(arg);
+})
+
 
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([
@@ -16,10 +24,11 @@ async function createWindow() {
     width: 1920,
     height: 1080,
     webPreferences: {
-
       // Use pluginOptions.nodeIntegration, leave this alone
       // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info
-      nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION
+      nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION,
+      // nodeIntegration: true,
+      preload: path.join(__dirname, 'preload.js')
     }
   })
 

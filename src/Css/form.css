@@ -26,7 +26,7 @@ form input {
   
   transition: all .4s;
 }
-input:focus, input:hover {
+form input:focus, form input:hover {
   box-shadow: 0 0 0 2px var(--colors_red);
   outline: none;
 }
@@ -38,6 +38,7 @@ form .break {
   flex-basis: 100%;
 }
 form label {
+  margin: 0 var(--small_border_radius);
   margin-bottom: var(--small_border_radius);
   
   text-align: center;
