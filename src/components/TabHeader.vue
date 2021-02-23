@@ -65,6 +65,10 @@ function radix_converter(input, from_base, to_base) {
 	return output;
 }
 
+function formatValue(val, valid) {
+	return val.toUpperCase().replace(new RegExp("[^" + valid + "]"), "");
+}
+
 export default {
 	name: "TabHeader",
 	methods: {
@@ -104,9 +108,9 @@ export default {
 						values[key] = "";
 					} else {
 						if (key != base) {
-							values[key] = radix_converter(val, base, key);
+							values[key] = formatValue(radix_converter(val, base, key), legal);
 						} else {
-							values[key] = val;
+							values[key] = formatValue(val, legal);
 						}
 					}
 				}
@@ -118,7 +122,7 @@ export default {
 
 					input.value = values[base];
 				}
-			}, 100);
+			}, 0);
 		},
 	},
 	data: () => ({

@@ -3,7 +3,8 @@
 import { app, protocol, BrowserWindow } from 'electron'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import installExtension, { VUEJS_DEVTOOLS } from 'electron-devtools-installer'
-const isDevelopment = process.env.NODE_ENV !== 'production'
+const forceBuildMode = false; // Force the served app to look like the built version
+const isDevelopment = forceBuildMode ? false : process.env.NODE_ENV !== 'production'
 const { ipcMain } = require('electron')
 const path = require('path');
 
@@ -18,18 +19,27 @@ protocol.registerSchemesAsPrivileged([
   { scheme: 'app', privileges: { secure: true, standard: true } }
 ])
 
+const devtoolsWidth = 555;
+
+function getWidth(w) {
+  return isDevelopment ? w + devtoolsWidth : w
+}
+
 async function createWindow() {
   // Create the browser window.
   const win = new BrowserWindow({
-    width: 1920,
+    width: getWidth(1440),
+    minWidth: getWidth(650),
     height: 1080,
+    minHeight: 500,
     webPreferences: {
       // Use pluginOptions.nodeIntegration, leave this alone
       // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info
       nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION,
       // nodeIntegration: true,
-      preload: path.join(__dirname, 'preload.js')
-    }
+      preload: path.join(__dirname, 'preload.js'),
+      devTools: isDevelopment,
+    },
   })
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
