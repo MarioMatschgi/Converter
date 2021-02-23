@@ -46,7 +46,7 @@ export default {
 	},
 	name: "TabHeader",
 	data: () => ({
-		activetab: "2",
+		activetab: "1",
 	}),
 };
 </script>

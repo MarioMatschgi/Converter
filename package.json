@@ -2,6 +2,28 @@
   "name": "converter",
   "version": "0.2.0",
   "private": true,
+  "homepage": "https://github.com/MarioMatschgi/Converter",
+  "license": "MIT",
+  "displayName": "Converter",
+  "keywords": [
+    "converter",
+    "bit operation",
+    "base",
+    "radix",
+    "calculator"
+  ],
+  "author": {
+    "name": "Mario Elsnig",
+    "email": "mario.elsnig@gmail.com",
+    "url": "https://www.programario.at"
+  },
+  "contributors": [
+    {
+      "name": "Björn Barow",
+      "url": "https://github.com/mrBayBayHD"
+    }
+  ],
+  "repository": "github:MarioMatschgi/Converter",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
