@@ -1,18 +1,11 @@
-form {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  /* align-items: stretch; */
-  margin: calc(0 - var(--padding));
-}
-
-form div {
+form > div {
   margin: var(--padding) !important;
   width: 25em;
-  flex: 1 1 auto;
+  display: block;
+}
+form > div {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 form input {
@@ -22,20 +15,17 @@ form input {
   font-size: 1em;
   padding: var(--small_border_radius);
   border-radius: var(--small_border_radius);
-  flex: 1 1 auto;
+  /* width: 100%; */
+  flex-grow: 1;
   
   transition: all .4s;
 }
-form input:focus, form input:hover {
+form input:focus, form input:hover:not(:disabled) {
   box-shadow: 0 0 0 2px var(--colors_red);
   outline: none;
 }
 form input, form label {
-  flex-basis: 100%;
   margin: 0;
-}
-form .break {
-  flex-basis: 100%;
 }
 form label {
   margin: 0 var(--small_border_radius);
