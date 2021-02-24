@@ -92,6 +92,7 @@ export default {
 }
 #about .flexbox > * {
 	margin: var(--small_padding) !important;
+	flex-grow: 0 !important;
 }
 #about .flexbox a {
 	cursor: pointer;
