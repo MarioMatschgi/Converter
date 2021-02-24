@@ -28,9 +28,10 @@ function getWidth(w) {
 async function createWindow() {
   // Create the browser window.
   const win = new BrowserWindow({
-    width: getWidth(850),
+    autoHideMenuBar: true,
+    width: getWidth(900),
     minWidth: getWidth(650),
-    height: 650,
+    height: 800,
     minHeight: 500,
     webPreferences: {
       // Use pluginOptions.nodeIntegration, leave this alone

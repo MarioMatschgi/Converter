@@ -73,8 +73,6 @@ export default {
 	max-width: 40em;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: var(--padding);
-	margin-bottom: var(--padding);
 }
 #about img {
 	max-width: 5em;
