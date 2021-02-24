@@ -24,7 +24,7 @@ body {
   background: var(--foreground_color);
 }
 .box .box {
-  background: red;
+  background: var(--highlight_color);
 }
 .box :first-child {
   margin-top: 0;
@@ -59,4 +59,8 @@ body {
 	flex-basis: 100%;
 	margin: 0 !important;
 	padding: 0 !important;
+}
+
+.div_spacer {
+  height: var(--small_padding)
 }
