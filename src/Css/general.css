@@ -46,14 +46,21 @@ body {
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	margin: calc(0px - var(--padding)) !important;
+	margin: calc(0px - var(--small_padding)) !important;
 }
 .flexbox.nostretch {
   align-items: flex-start;
 }
+.flexbox.column {
+	flex-direction: column;
+}
+.flexbox.row {
+	flex-direction: row;
+}
 .flexbox > * {
 	flex: 1 1 auto;
-	margin: var(--padding) !important;
+  width: auto;
+	margin: var(--small_padding) !important;
 }
 .flexbox > .break {
 	flex-basis: 100%;

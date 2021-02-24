@@ -1,12 +1,7 @@
 <template>
-  <!-- HEADER -->
-  <div class="header">
-    <h1>Converter</h1>
-  </div>
-  
   <!-- CONTENT -->
   <div class="content">
-    <TabHeader/>
+    <Content/>
   </div>
   
   <!-- FOOTER -->
@@ -17,13 +12,13 @@
 </template>
 
 <script>
-import TabHeader from "./components/TabHeader";
-import Footer from "./components/Footer";
+import Content from "./components/content";
+import Footer from "./components/footer";
 
 export default {
 	name: "App",
 	components: {
-		TabHeader,
+		Content,
 		Footer,
 	},
 	mounted() {

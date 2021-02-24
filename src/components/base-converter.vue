@@ -1,5 +1,4 @@
 <template>
-  <h2>Base converter</h2>
   <form class="flexbox">
     <div>
       <label for="binary"><span>Binary</span> <span>(base 2)&nbsp;&nbsp;&nbsp;<i class="far">&#xf059;</i></span></label>

@@ -10,15 +10,18 @@
 
 		<div class="box tabcontents">
 			<div v-if="activetab === 'base'" class="tabcontent">
+        <h2>Base converter</h2>
 				<BaseConverter/>
 			</div>
-			<div v-if="activetab === 'bit-op'" class="tabcontent">
+			<div v-else-if="activetab === 'bit-op'" class="tabcontent">
+        <h2>Bit operations</h2>
         <BitOperations/>
 			</div>
-      <div v-if="activetab === 'met-imp'" class="tabcontent">
+      <div v-else-if="activetab === 'met-imp'" class="tabcontent">
+        <h2>Metric-imperial conversion</h2>
         <MetricImperialConversion/>
 			</div>
-      <div v-if="activetab === '?'" class="tabcontent">
+      <div v-else-if="activetab === '?'" class="tabcontent">
         <Information/>
 			</div>
 		</div>
@@ -38,7 +41,7 @@ export default {
 		MetricImperialConversion,
 		Information,
 	},
-	name: "TabHeader",
+	name: "Content",
 	data: () => ({
 		activetab: "base",
 	}),

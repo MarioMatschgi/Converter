@@ -1,6 +1,5 @@
 <template>
-  <h2>Bit operations</h2>
-  <form class="flexbox nostretch">
+  <form class="flexbox column">
     <div>
       <label for="bitop-input">Enter the expression<i class="far">&#xf059;</i></label>
       <input type="text" id="bitop-input"  name="bitop-input"   @keydown="onInput($event)">
@@ -10,7 +9,7 @@
     </div>
     <div>
       <label for="bitop-result">Result<i class="far">&#xf059;</i></label>
-      <div class="flexbox">
+      <div class="flexbox row">
         <input type="text" id="bitop-result-hex"  name="bitop-result" disabled>
         <input type="text" id="bitop-result-dec"  name="bitop-result" disabled>
         <input type="text" id="bitop-result-bin"  name="bitop-result" disabled>
