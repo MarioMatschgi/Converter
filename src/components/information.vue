@@ -2,12 +2,12 @@
   <div id="about" class="box">
     <img src="../../icon.png">
     <h1>{{getVersion()}}</h1>
-    <p><strong>Converter</strong> lets you covert numbers between different radix (bases), perform bit-operatons and more!</p>
-    <p>BJÖRN SCHREIBT NOCH</p>
+    <p><strong>Converter</strong> lets you convert numbers between different radix (bases), perform bit-operatons and more!</p>
+    <p>This little tool is made for everyone. If you are searching for a compact and functional converter, you are definitely right here!</p>
     
-    <div class="div_spacer"/>
+    <!-- <div class="div_spacer"/> -->
     
-    <h1>Contact me!</h1>
+    <!-- <h1>Contact me!</h1> -->
     <div class="flexbox">
       <!-- GITHUB -->
       <div class="column">
@@ -94,6 +94,13 @@ export default {
 }
 #about .flexbox a {
 	cursor: pointer;
+}
+#about .flexbox a > i {
+	transition: 0.3s ease;
+}
+#about .flexbox a:hover > i {
+	transform: scale(1.05);
+	filter: saturate(1);
 }
 /* COLORS FOR ICONS */
 .github {
