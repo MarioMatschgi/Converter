@@ -30,8 +30,6 @@ Below is a list with some key features of Converter.
 <hr>
 
 ## Screenshots
-> See the full page with more screenshots @ [www.programario.at/projects/universal-apps/converter][screenshots]
-
 | ![base-converter][base-converter] |
 |:--:|
 | *Base converter* |
