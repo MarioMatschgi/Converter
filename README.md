@@ -65,10 +65,8 @@ Just contact information and credits.
 ### Installation
 Below is a guide for installation and download links for every version. I hope that you enjoy my work, if you want to report a bug just contact me.
 Installation
-#### MacOS:
-Download the .dmg file from below. Doubleclick (or right-click and choose "open"). Drag and drop the .app to the Applications folder.
-#### Windows:
-Download the .exe file from below. Doubleclick (or right-click and choose "open"). If the windowsdefender pops up just continue anyways, this may happen because I did not pay to sign the app.
+* MacOS:<br>Download the .dmg file from below. Doubleclick (or right-click and choose "open"). Drag and drop the .app to the Applications folder.
+* Windows:<br>Download the .exe file from below. Doubleclick (or right-click and choose "open"). If the windowsdefender pops up just continue anyways, this may happen because I did not pay to sign the app.
 
 ### Download
 > For the download visit  [www.programario.at/projects/mac-apps/menu-color-palette.php][download]
