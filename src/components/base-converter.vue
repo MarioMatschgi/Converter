@@ -2,19 +2,19 @@
   <form class="flexbox">
     <div>
       <label for="binary"><span>Binary</span> <span>(base 2)&nbsp;&nbsp;&nbsp;<i class="far">&#xf059;</i></span></label>
-      <input type="text" data-base="2" id="binary"  name="binary"   @keydown="onInput('01', $event)">
+      <input type="text" @keydown="onInput($event)" data-base="2" id="binary"  name="binary"   data-legal="'01'">
     </div>
     <div>
       <label for="octal"><span>Octal</span> <span>(base 8)&nbsp;&nbsp;&nbsp;<i class="far">&#xf059;</i></span></label>
-      <input type="text" data-base="8" id="octal"   name="octal"    @keydown="onInput('01234567', $event)">
+      <input type="text" @keydown="onInput($event)" data-base="8" id="octal"   name="octal"    data-legal="'01234567'">
     </div>
     <div>
       <label for="decimal"><span>Decimal</span> <span>(base 10)&nbsp;&nbsp;&nbsp;<i class="far">&#xf059;</i></span></label>
-      <input type="text" data-base="10" id="decimal" name="decimal"  @keydown="onInput('0123456789', $event)">
+      <input type="text" @keydown="onInput($event)" data-base="10" id="decimal" name="decimal"  data-legal="'0123456789'">
     </div>
     <div>
       <label for="hex"><span>Hexadecimal</span> <span>(base 16)&nbsp;&nbsp;&nbsp;<i class="far">&#xf059;</i></span></label>
-      <input type="text" data-base="16" id="hex"  name="hex"         @keydown="onInput('0123456789ABCDEF', $event)">
+      <input type="text" @keydown="onInput($event)" data-base="16" id="hex"  name="hex"         data-legal="'0123456789ABCDEF'">
     </div>
   </form>
 </template>
@@ -52,12 +52,26 @@ function isModifyKeyPressed(
 	);
 }
 
+function getLegalStr(inputs, base) {
+	for (let i = 0; i < inputs.length; i++) {
+		const input = inputs[i];
+		if (input.getAttribute("data-base") == base) {
+			console.log("I:" + input.id);
+			return input.getAttribute("data-legal");
+		}
+	}
+}
+
 export default {
 	name: "BaseConverter",
 	methods: {
-		onInput(legal, event) {
+		onInput(event) {
 			// Manage input
 			let k = event.key.toLowerCase();
+			let inputs = document
+				.getElementsByTagName("form")[0]
+				.getElementsByTagName("input");
+			let legal = getLegalStr(inputs, event.target.getAttribute("data-base"));
 
 			if (!isModifyKeyPressed(event, false, true, true, false)) {
 				if (k.length == 1 && legal.toLowerCase().includes(k)) {
@@ -91,7 +105,10 @@ export default {
 						values[key] = "";
 					} else {
 						if (key != base) {
-							values[key] = formatValue(radix_converter(val, base, key), legal);
+							values[key] = formatValue(
+								radix_converter(val, base, key),
+								getLegalStr(inputs, key)
+							);
 						} else {
 							values[key] = formatValue(val, legal);
 						}

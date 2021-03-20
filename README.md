@@ -1,6 +1,6 @@
 # Converter
 
-> For more information and the app-download take a look at my website [www.programario.at]() (ToDo: Add link)
+> For more information and the app-download take a look at my website [www.programario.at][website_article]
 Found a bug? [Contact me](https://www.programario.at/#contact) 
 
 ## Table of content
@@ -16,36 +16,76 @@ Found a bug? [Contact me](https://www.programario.at/#contact)
 
 ## Overview
 ### What is Converter?
-MenuColorPalettes is a utility app for macOS, Windows and Linux (ToDo: Linux version) for converting numbers between different radixes, calculating and calculating bit-operations. Of course, there are websites ([rapidtables](https://www.rapidtables.com/convert/number/hex-to-binary.html), [binaryhexconverter](https://www.binaryhexconverter.com/hex-to-binary-converter)) for doing this, but most of them are quiet frustrating to use and they are in your browser, not in a all-in-one standalone application. THIS is where Converter comes in.
+Converter is an app for converting and calculating numbers. It can convert numbers between different radix (bases), for example binary to hexadecimal or decimal numbers and vice versa. It also supports a calculator which can evaluate braces, different radix and even bit-operations!
 
 ### Requirements
-Mac, windows or Linux (ToDo: Linux version) computer.
+Computer with MacOS or Windows 10.
 
 ### Features
+Below is a list with some key features of Converter.
+* Base conversion: Convert numbers between different radix (bases), for example binary to hexadecimal or decimal numbers and vice versa
+* Calculator: Calculator with support for braces, hexadecimal numbers (use 0x as prefex, example: 0xFF) and bit-operations. Calculator evaluates input in JavaScript therefore any valid JS calculation will be calculated correctly.
+* Bit-operations: Use "|" for bit-or, "&" for bit-and and so on.
 
 <hr>
 
 ## Screenshots
-> For more screenshots visit [www.programario.at/projects/mac-apps/menu-color-palette.php]() (ToDo: Link)
+| ![base-converter][base-converter] |
+|:--:|
+| *Base converter* |
+
+| ![bit-operations][bit-operations] |
+|:--:|
+| *Bit operations* |
+
+| ![about][about] |
+|:--:|
+| *About* |
 
 <hr>
 
 ## Tutorial
-> For a more detailed tutorial visit [www.programario.at/projects/mac-apps/menu-color-palette.php]() (ToDo: Link)
-
+Below you can find a guide which helps you getting started and some tips and tricks.
+### Getting started
+Download and install Converter
+### General
+Start the app and you should see tabs labeled "Base converter", "Bit operations", "Metric-imperial" and "?".
+### Base converter
+Enter any valid number in any of the 4 fields. The other fields will update in real-time. If you want to convert from a different base, just enter the number in the next field of your choice!
+### Bit operations
+Enter any valid calculation in the field. Any valid JavaScript calculation will be calculated correctly. Use "|" for bit-or, "&" for bit-and and so on. The result will show in real-time in different bases.
+### Metric-imperial
+Comming soon...
+### About "(?)"
+Just contact information and credits.
 
 <hr>
 
 ## Download & Installation
 ### Installation
-Download the .dmg file. Double-click (or right-click and choose "open"). Drag and drop the .app to the Applications folder.
+Below is a guide for installation and download links for every version. I hope that you enjoy my work, if you want to report a bug just contact me.
+Installation
+#### MacOS:
+Download the .dmg file from below. Doubleclick (or right-click and choose "open"). Drag and drop the .app to the Applications folder.
+#### Windows:
+Download the .exe file from below. Doubleclick (or right-click and choose "open"). If the windowsdefender pops up just continue anyways, this may happen because I did not pay to sign the app.
 
 ### Download
-> For the download visit  [www.programario.at/projects/mac-apps/menu-color-palette.php](https://www.programario.at/projects/mac-apps/menu-color-palette.php#download-download)
+> For the download visit  [www.programario.at/projects/mac-apps/menu-color-palette.php][download]
 
 <hr>
 
 ## Licence
 This project is licenced under the [MIT-License](https://choosealicense.com/licenses/mit/).
 
-Made with ❤️ by me, Mario Elsnig © 2020
+Made with ❤️ by me, Mario Elsnig © 2021
+
+
+<!--- LINKS -->
+[website_article]: https://programario.at/projects/universal-apps/converter
+[download]: https://programario.at/projects/universal-apps/converter#download__installation-download
+
+<!--- IMAGES -->
+[base-converter]: https://programario.at/lang/en/projects/universal-apps/Images/converter/base-converter.png "Base Converter"
+[bit-operations]: https://programario.at/lang/en/projects/universal-apps/Images/converter/bit-operations.png "Bit Operations"
+[about]: https://programario.at/lang/en/projects/universal-apps/Images/converter/about.png "About"
