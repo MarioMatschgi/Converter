@@ -30,6 +30,7 @@ Below is a list with some key features of Converter.
 <hr>
 
 ## Screenshots
+Below are some screenshots of Converter.
 | ![base-converter][base-converter] |
 |:--:|
 | *Base converter* |
@@ -47,7 +48,7 @@ Below is a list with some key features of Converter.
 ## Tutorial
 Below you can find a guide which helps you getting started and some tips and tricks.
 ### Getting started
-Download and install Converter
+[Download and install][download] Converter
 ### General
 Start the app and you should see tabs labeled "Base converter", "Bit operations", "Metric-imperial" and "?".
 ### Base converter
